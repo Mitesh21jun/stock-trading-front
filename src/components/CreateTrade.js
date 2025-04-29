@@ -8,7 +8,7 @@ const CreateTrade = () => {
     quantity: "",
     broker_name: "",
     price: "",
-    method: "fifo"
+    sale_type: "fifo"
   });
 
   const handleChange = e => {
@@ -83,7 +83,7 @@ const CreateTrade = () => {
 
         <label>
           Method (for DEBIT):
-          <select name="method" value={form.method} onChange={handleChange}>
+          <select name="sale_type" value={form.sale_type} onChange={handleChange}>
             <option value="fifo">FIFO</option>
             <option value="lifo">LIFO</option>
           </select>
