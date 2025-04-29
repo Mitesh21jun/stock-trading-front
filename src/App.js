@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CreateTrade from "./components/CreateTrade";
+import ViewTrades from "./components/ViewTrades";
+import ViewLots from "./components/ViewLots";
+import StockSummary from "./components/StockSummary";
 
-function App() {
+const App = () => {
+  const [tab, setTab] = useState("create");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>📈 Stock Trading Portal</h1>
+      <div className="tabs">
+        <button onClick={() => setTab("create")}>Create Trade</button>
+        <button onClick={() => setTab("trades")}>View Trades</button>
+        <button onClick={() => setTab("lots")}>View Lots</button>
+        <button onClick={() => setTab("summary")}>Stock Summary</button>
+      </div>
+
+      <div className="tab-content">
+        {tab === "create" && <CreateTrade />}
+        {tab === "trades" && <ViewTrades />}
+        {tab === "lots" && <ViewLots />}
+        {tab === "summary" && <StockSummary />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
