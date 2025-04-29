@@ -18,6 +18,7 @@ const StockSummary = () => {
           <th>Debit Qty</th>
           <th>Net Qty</th>
           <th>Available Qty</th>
+          <th>Warning</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,7 @@ const StockSummary = () => {
             <td>{s.total_quantity_debit}</td>
             <td>{s.net_quantity}</td>
             <td>{s.total_available_quantity}</td>
+            <td>{s.warning}</td>
           </tr>
         ))}
       </tbody>

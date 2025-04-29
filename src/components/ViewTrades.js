@@ -18,6 +18,7 @@ const ViewTrades = () => {
           <th>Quantity</th>
           <th>Broker</th>
           <th>Price</th>
+          <th>Amount</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,7 @@ const ViewTrades = () => {
             <td>{t.quantity}</td>
             <td>{t.broker_name}</td>
             <td>{t.price}</td>
+            <td>{t.amount}</td>
           </tr>
         ))}
       </tbody>
